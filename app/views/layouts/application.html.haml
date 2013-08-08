@@ -1,9 +1,21 @@
 !!! 5
 %html
   %head
-    %title Depot
+    %title Pragprog Books Online Store
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body{class: controller.controller_name}
-    = yield
+    #banner
+      = image_tag("logo.png")
+      = @page_title || "Pragmatic Bookshelf"
+    #columns
+      #side
+        %ul
+          %li= link_to "Home", "http://www...."
+          %li= link_to "Questions", "http://www..../faq"
+          %li= link_to "News", "http://www..../news"
+          %li= link_to "Contact", "http://www..../contact"
+          = time_tag(Time.now)
+      #main
+        = yield
