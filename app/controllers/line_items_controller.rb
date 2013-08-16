@@ -40,15 +40,16 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @line_item = LineItem.new(product_id: params[:product_id], cart_id: current_cart.id)
-    #@cart = current_cart
-    #product = Product.find(params[:product_id])
-    #@line_item = @cart.line_items.build(product: product)
+    #@line_item = LineItem.new(product_id: params[:product_id], cart_id: current_cart.id)
+    @cart = current_cart
+    product = Product.find(params[:product_id])
+    @line_item = @cart.add_product(product.id)
+    #@line_item = @cart.line_items.build(product_id: product.id)
     respond_to do |format|
       if @line_item.save
         format.html do
           session[:counter]=0
-          redirect_to @line_item.cart, notice: 'Line item was successfully created.'
+          redirect_to @line_item.cart
         end
         format.json { render json: @line_item,
                              status: :created, location: @line_item }
@@ -84,7 +85,7 @@ class LineItemsController < ApplicationController
     @line_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+      format.html { redirect_to cart_path(@line_item.cart) }
       format.json { head :no_content }
     end
   end
