@@ -85,7 +85,10 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.update_attribute(:quantity, @line_item.quantity-1)
     @line_item.destroy if @line_item.quantity<=0
-
+    #if @line_item.cart.line_items.empty? then
+    #  @line_item.cart.destroy
+    #  redirect_to
+    #end
     respond_to do |format|
       format.html { redirect_to store_url }
       format.js {@current_item=@line_item}
