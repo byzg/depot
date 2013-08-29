@@ -22,6 +22,8 @@ end
 
 gem 'jquery-rails', "~> 2.3.0"
 gem 'will_paginate', '~> 3.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'simple_form'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

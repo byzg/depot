@@ -1,0 +1,18 @@
+%h1 New user
+.depot_form
+  = render 'errors'
+  = form_for @user do |f|
+    %fieldset
+      %legend Введите сведения о пользователе
+      .field
+        = f.label :name
+        = f.text_field :name, size: 40
+      .field
+        = f.label :password, 'Пароль'
+        = f.password_field :password, size: 40
+      .field
+        = f.label :password_confirmation, 'Подтверждение'
+        = f.password_field :password_confirmation, size: 40
+      .actions
+        = f.submit 'Save'
+= link_to 'Back', users_path

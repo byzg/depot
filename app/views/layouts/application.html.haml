@@ -20,5 +20,11 @@
           %li= link_to "Contact", "http://www..../contact"
           = time_tag(Time.now)
           #counter= @counter_label
+        - if session[:user_id]
+          %ul
+            %li= link_to 'Orders', orders_path
+            %li= link_to 'Products', products_path
+            %li= link_to 'Users', users_path
+          = button_to 'Logout', logout_path, method: :delete
       #main
         = yield

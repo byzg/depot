@@ -1,0 +1,28 @@
+%h1 Editing user
+.depot_form
+  = render 'errors'
+  =simple_form_for @user, url: user_path, method: :put do |f|
+    %fieldset
+      %legend Введите сведения о пользователе
+      =f.input :old_password, label: 'Старый пароль'
+      =f.input :new_password, label: 'Новый пароль'
+      =f.input :new_password_confirmation, label: 'Повторите новый пароль'
+      =f.submit
+  -#= form_tag ({action: 'update'}) do
+  -#  %fieldset
+  -#    %legend Введите сведения о пользователе
+  -#    .field
+  -#      = label_tag :old_password, 'Старый пароль'
+  -#      = password_field_tag :old_password, size: 40
+  -#    .field
+  -#      = label_tag :new_password, 'Новый пароль'
+  -#      = password_field_tag :new_password, size: 40
+  -#    .field
+  -#      = label_tag :new_password_confirmation, 'Повторите новый пароль'
+  -#      = password_field_tag :new_password_confirmation, size: 40
+  -#    .actions
+  -#      = submit_tag 'Save'
+
+= link_to 'Show', @user
+\|
+= link_to 'Back', users_path
