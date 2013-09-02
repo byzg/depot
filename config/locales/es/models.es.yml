@@ -1,0 +1,5 @@
+es:
+  activerecord:
+    errors:
+      messages:
+        blank: "no puede quedar en blanco"

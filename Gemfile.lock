@@ -76,6 +76,9 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails-i18n (3.0.0.pre2)
+      i18n (~> 0.5)
+      rails (>= 3.0.0, < 4.0.0)
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -120,6 +123,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails (~> 2.3.0)
   rails (= 3.2.13)
+  rails-i18n (~> 3.0.0.pre)
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3

@@ -6,14 +6,16 @@ Depot::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :users
-  resources :orders
-  resources :line_items
-  resources :carts
-  root to: 'store#index', as: 'store'
-  get "store/index"
-  resources :products  do
-    get :who_bought, on: :member
+  scope '(:locale)' do
+    resources :users
+    resources :orders
+    resources :line_items
+    resources :carts
+    root to: 'store#index', as: 'store'
+    get "store/index"
+    resources :products  do
+      get :who_bought, on: :member
+    end
   end
 
 
