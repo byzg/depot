@@ -40,8 +40,8 @@ gem 'rails-i18n', '~> 3.0.0.pre'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+#Deploy with Capistrano
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
